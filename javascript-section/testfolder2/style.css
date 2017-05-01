@@ -1,0 +1,69 @@
+body {
+    text-align: center;
+    margin: -20px  auto 0 auto;
+    font-family: sans-serif, serif;
+}
+h2 {
+    font-family: cursive;
+    color: #bbb;
+    margin: 0 0;
+}
+
+h1 {
+    color: #bbb;
+    margin: 0 0;
+    font-family:sans-serif;
+}
+.container {
+    background-color:dodgerblue;
+    padding: 20px 0 5px 0;
+}
+
+#optionList {
+    margin: 0 auto;
+/*    height: 30px;*/
+    
+}
+#optionList li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 20px 0 5px;
+
+}
+#optionList li:hover {
+    background-color: dodgerblue;
+    color: aliceblue;
+}
+
+
+#colorBlocks {
+    background-color: #333;
+}
+
+#colorBlocks ul {
+
+    margin: 0 auto;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    width: 400px;
+    height: 250px;
+}
+.square {
+    list-style: none;
+    width: 100px;
+    height: 100px;
+    background-color: #abc;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+#newColors,
+#hard,
+#easy {
+    border: 1px solid #888;
+}
+
+.success {
+   background-color:#9a0;
+    border-radius: 40px;
+}

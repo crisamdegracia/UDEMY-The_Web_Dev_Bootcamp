@@ -1,0 +1,37 @@
+table {
+    font-family: helvetica;
+    margin: 0 auto;
+    width: 80%;
+    height: 400px;
+    text-align: center;
+    font-size: 5em;
+    color: #999;
+}
+
+
+#title { 
+    font-size: 3em;
+    text-align: center;
+    margin: 0 auto;
+    color: #333;
+}
+
+td {
+    width: 33.334%;
+}
+
+td:nth-child(1) {
+    border-bottom: 1px solid #777;
+}
+td:nth-child(2) {
+    border-right: 1px solid #777;
+    border-bottom: 1px solid #777;
+    border-left: 1px solid #777;
+}
+td:nth-child(3) {
+    border-bottom: 1px solid #777;
+}
+.trow {
+    border-bottom: 0 !important;
+    
+}

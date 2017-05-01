@@ -1,0 +1,59 @@
+
+nav {
+    margin-bottom: 10px;
+}
+.jumbotron {
+    background: url(b3.jpg) no-repeat center;
+    -webkit-background-size: cover;
+    background-size: cover ;
+    margin-top: 10px;
+    text-align: center;
+    color: #111;
+    padding-bottom: 20%;
+/*
+    padding-right: 30%;
+    padding-left: 30%;
+*/
+}
+
+#forme {
+  width:   50%;   
+  margin: 0 auto;
+  
+}
+
+img {
+    margin-top: ;
+    width: 500px;
+    height: 300px;
+}
+
+section {
+}
+
+.footer {
+    position: absolute;
+    bottom: -1 ;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #333;
+    color: #111;
+    padding: 50px 50px;
+    margin-bottom: -1;
+    text-align: center;
+
+}
+
+@media only screen and ( max-width: 620px ){
+    #forme {
+        width: 100%;
+        
+    }
+    
+    .jumbotron {
+        margin-top: 50px;
+    }
+    
+}
