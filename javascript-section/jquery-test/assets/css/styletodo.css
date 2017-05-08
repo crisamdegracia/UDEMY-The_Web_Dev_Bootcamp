@@ -1,0 +1,29 @@
+body {
+    text-rendering: optimizeLegibility;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+* {
+    border: 1px solid grey;
+}
+
+.container {
+    text-align: center;
+}
+
+.mainHeader {
+    margin: 0 auto;
+    width: 500px;
+    padding: 50px 20px;
+}
+
+.header:nth-child(1) {
+    float: left;
+}
+
+.header:nth-child(2) {
+    float: right;
+    margin: 20px 20px;
+}

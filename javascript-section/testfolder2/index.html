@@ -3,59 +3,38 @@
     <head>
         <meta charset="UTF-8">
         <title>Javascript Section</title>
+        <link rel="shortcut icon" href="favicon.io">
         <link rel="stylesheet" href="style.css" type="text/css">
-
-
-        <!--
-
-/*
-.colors:nth-child(1){background-color:indianred;}
-
-.colors:nth-child(2){background-color:blueviolet;}
-
-.colors:nth-child(3){background-color:chartreuse;}
-
-.colors:nth-child(4){background-color:darkgreen;}
-
-.colors:nth-child(5){background-color:darkgoldenrod;}
-
-.colors:nth-child(6){background-color:midnightblue;}
-
-*/
--->
-
-
     </head>
     <body>
 
-        <section>
-            <div class="container">
+       
+        <section id="mainHeader">
+            <div class="container congratsColor">
                 <h2> The Great</h2>
-                <h2> HEXADECIMAL COLORS</h2>
                 <h1 id="mainColor"></h1>
-                <h2>Guessing Game</h2>
+                <h2>Color Game</h2>
             </div>
         </section>
 
         <section id="option">
             <div>
                 <ul id='optionList'>
-                    <li class=" buttons" id="newColors">New Colors</li>
-                    <li class=" buttons" id="easy">Easy</li>
-                    <li class=" buttons" id="hard">Hard</li>
+                    <li id="newColors">New Colors</li>
+                    <li class="buttons" id="easy">Easy</li>
+                    <li class="buttons" id="hard">Hard</li>
                 </ul>
             </div>
         </section>
         <section id="colorBlocks">
 
-            <ul id="parentSquare">
+            <ul id="parentSquare" class="congratsColor">
                 <li class="square"></li>
                 <li class="square"></li>
                 <li class="square"></li>
                 <li class="square"></li>
                 <li class="square"></li>
                 <li class="square"></li>
-                
             </ul>
             
             <div id="error"></div>

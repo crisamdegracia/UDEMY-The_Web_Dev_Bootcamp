@@ -1,101 +1,151 @@
-console.log('connected!');
-'use strict';
-var mainColor = document.querySelector('#mainColor'),
-    newColors = document.getElementById('newColors'),
-    error = document.querySelector('#error'),
-    easy = document.querySelector('#easy'),
-    hard = document.querySelector('#hard'),
-    square = document.querySelectorAll('.square'),
-    buttons = document.querySelectorAll('.buttons'),
-    mainColor = document.querySelector('#mainColor'),
-    saved;
+ var counter = 6,
+    color = generateRandomColor(counter),
+    squares = document.querySelectorAll('.square'),
+    pickColor = pickedColor(),
+    colorDisplay = document.querySelector('#mainColor'),
+    errormsg = document.querySelector('#error'),
+    headColor = document.getElementById('mainHeader'),
+    reset = document.querySelector('#newColors'),
+    difficulties = document.querySelectorAll('.buttons')
 
-  
-//when page loads squares it loads random colors..
-window.addEventListener('load', function () {
+colorDisplay.textContent = pickColor; 
 
-    var counter = 0;
-
-    while (counter !== 6) {
-
-        var forRandom = '1234567890abcdef',
-            res = '#';
+ikenat();
 
 
-    for (let i  = 0 ; i < 6 ; i++){
+function ikenat(){
 
-        res += forRandom[Math.floor(Math.random()*forRandom.length)]
+    modeButton();
+    restart();
+    setupSquares();
+}
 
-    }
-    for(let i = 0 ; i < square.length ; i++){
+function setupSquares(){
 
-        square[counter].style.backgroundColor = res;
+    for(let i = 0 ; i < squares.length ; i++){
 
-    }
-        
-    counter++
-    }
- mainColor.innerHTML = res;
-});
+        squares[i].style.backgroundColor = color[i];
 
+        squares[i].addEventListener('click' , function(){
 
-
-// when its pressed it will change the square colors
-newColors.addEventListener('click', function(){
-
-    //it checks the index of square for its value
-    var counter = 0;
+            var clickedColor = this.style.backgroundColor;
 
 
-    //adding up the color for the index of squares
-    while( counter !== 6 ){
+            if(clickedColor === pickColor ){
 
-        var forRandom = 'abcdef1234567890';
-        var res = '#';
-        var l = 0;
-        for( ; l < 6 ; l++ ){
+                error.classList.add('bgCorrect');
 
-            res += forRandom[Math.floor(Math.random()*forRandom.length)]
-           
-        } 
-        //square index base from counter which is zero and res means the value of the random colors
-        square[counter].style.backgroundColor = res;
-       
-          counter++;  
-       
+                error.textContent = 'Correct!';
+
+                reset.textContent = 'Play Again?';
+
+                headColor.style.backgroundColor = pickColor;
+
+                for(let i = 0 ; i < squares.length ; i++){
+                    squares[i].style.backgroundColor = pickColor;
+                }
+
+
+            }
+            else {
+
+                this.style.backgroundColor = "#333";
+                error.classList.add('bgWrong');
+                error.textContent = 'Try Again!';
+
+            }
+
+
+        })    
 
     }
-   
-   mainColor.innerHTML = res;
+
+}
+
+
+reset.addEventListener('click' , function(){
+    restart();
 })
 
-/*------REMOVES the 3 childs and their length is also 3.*/
+function restart(){
 
-easy.addEventListener('click' , function(){
-    
-    while(parentSquare.children.length !== 3){
-        
-    parentSquare.removeChild(parentSquare.children[3])
+    color = generateRandomColor(counter);
+    pickColor = pickedColor();
+    console.log(pickColor)
+    colorDisplay.innerHTML = pickColor;
+    headColor.style.backgroundColor = 'steelblue';
+    error.textContent = '';
+    error.classList.remove('bgCorrect');
+    reset.textContent = 'New Colors';
+
+
+    for(let i = 0 ; i < squares.length ; i++){
+
+        squares[i].style.backgroundColor = color[i];       
+
     }
-    console.log(parentSquare.children.length)
-})
 
-hard.addEventListener('click', function(){
-    
-    parentSquare.addBack('.square')
-    
-})
+    for(let i = 0 ; i < squares.length ; i++){
 
+        if(color[i]){
 
+            squares[i].style.display = 'inline-block'
+        }
 
-
-
+        else {
+            squares[i].style.display = 'none';
+        }
 
 
 
+    }
+
+
+
+}
+
+function modeButton(){
 
 
 
 
+    for(let i = 0 ; i < difficulties.length ; i++){
+
+        difficulties[i].addEventListener('click', function(){
+            console.log(counter)
+            this.textContent === 'Easy' ? counter = 3 : counter = 6; 
+restart();
+            
+        })
+    }
+
+}
+
+function pickedColor(){
+
+    var random = Math.floor(Math.random() * counter)
+    console.log(random);
+    return color[random];
+}
 
 
+function generateRandomColor(num) {
+
+    var arr = [];
+
+    for(let i = 0 ; i < num ; i++){
+        arr.push(randomColor())
+    }
+
+    return  arr; 
+}
+
+function randomColor(){
+
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+
+    return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+
+}

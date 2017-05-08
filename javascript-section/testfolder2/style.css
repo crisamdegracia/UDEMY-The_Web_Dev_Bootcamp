@@ -4,25 +4,27 @@ body {
     font-family: sans-serif, serif;
 }
 h2 {
-    font-family: cursive;
-    color: #bbb;
+    color: #eee;
     margin: 0 0;
+    font-weight: normal;
 }
 
 h1 {
-    color: #bbb;
+    font-weight: normal;
+    color: #eee;
     margin: 0 0;
     font-family:sans-serif;
+    text-transform: uppercase;
 }
-.container {
-    background-color:dodgerblue;
+#mainHeader {
+    background-color: steelblue;
     padding: 20px 0 5px 0;
 }
 
 #optionList {
     margin: 0 auto;
-/*    height: 30px;*/
-    
+    /*    height: 30px;*/
+
 }
 #optionList li {
     display: inline-block;
@@ -48,6 +50,7 @@ h1 {
     width: 400px;
     height: 250px;
 }
+
 .square {
     list-style: none;
     width: 100px;
@@ -55,15 +58,44 @@ h1 {
     background-color: #abc;
     display: inline-block;
     border-radius: 10px;
+    border: 1px solid #222;
+    transition: background 0.6s;
+    -webkit-transition: background 0.6s;
+    -moz-transition: background 0.6s;
+    -o-transition: background 0.6s;
 }
 
 #newColors,
 #hard,
 #easy {
-    border: 1px solid #888;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: steelblue;
+    font-size: inherit;
+    transition: all 0.5s;
 }
 
 .success {
-   background-color:#9a0;
+    background-color:#9a0;
     border-radius: 40px;
+}
+
+.bgBtn {
+    background-color: steelblue;
+    color: #eee !important;
+}
+
+
+.bgWrong {
+    background-color: firebrick;
+    color: #fff;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.bgCorrect {
+    background-color: limegreen;
+    color: #fff;
+    font-weight: bold;
+    font-size: 32px;
 }
